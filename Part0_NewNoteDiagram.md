@@ -3,9 +3,10 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note payload: Form Data
     activate server
     server-->>browser: HTTP 301 Location: /exampleapp/notes
+    Note left of server: The server pushes the form data to the notes array.
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
