@@ -8,7 +8,7 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa application/json note
     activate server
-    server-->>browser: HTTP 201 Created {"message":"note created"}
     Note left of server: The server pushes the note to the notes array.
+    server-->>browser: HTTP 201 Created {"message":"note created"}
     deactivate server
 ```
